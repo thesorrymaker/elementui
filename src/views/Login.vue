@@ -27,6 +27,7 @@
                             <el-input type="password" v-model.trim="formData.Password" placeholder="Please enter your password"
                                 prefix-icon="el-icon-lock">
                             </el-input>
+
                         </el-form-item>
 
                         <el-form-item prop="RoleType" class="role-select">
@@ -81,23 +82,23 @@ export default {
             roleOptions: [],
             rules: {
                 UserName: [
-                    { required: true, message: '请输入账号', trigger: 'blur' },
+                    { required: true, message: 'Please enter your account number', trigger: 'blur' },
                 ],
                 Password: [
-                    { required: true, message: '请输入密码', trigger: 'blur' },
+                    { required: true, message: 'Please enter your password', trigger: 'blur' },
                 ],
                 RoleType: [
-                    { required: true, message: '请选择角色', trigger: 'blur' },
+                    { required: true, message: 'Please select a role', trigger: 'blur' },
                 ],
 
                 Code: [
-                    { required: true, message: '请输入验证码', trigger: 'blur' },
+                    { required: true, message: 'Please enter the verification code', trigger: 'blur' },
                     {
                         validator: (rule, value, callback) => {
                             let identifyCode = this.$refs.ValidCode.getCode();
 
                             if (value != identifyCode) {
-                                callback(new Error('请输入正确的验证码'));
+                                callback(new Error('Please enter the correct verification code'));
                             } else {
                                 callback();
                             }
@@ -135,7 +136,7 @@ export default {
                         this.$refs.ValidCode.refreshCode();
                     }
                 } else {
-                    this.$message.error("登录验证不通过")
+                    this.$message.error("Login verification failed")
                     this.$refs.ValidCode.refreshCode();
                     return false;
                 }
@@ -280,3 +281,5 @@ export default {
     text-decoration: underline;
 }
 </style>
+
+

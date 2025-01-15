@@ -41,11 +41,11 @@ export async function Post(url, data) {
  */
 export async function PostDelete(url, data) {
 
-    let confirm = await ConfirmMessageBox({ content: "你确定要删除吗?" })
+    let confirm = await ConfirmMessageBox({ content: "Are you sure you want to delete??" })
     if (confirm) {
        return await Post(url, data);
     }
-    return { Success: false, Msg: "用户取消操作" };
+    return { Success: false, Msg: "User cancels the operation" };
 }
 /**
  * 更新某个表的字段请求
@@ -65,5 +65,5 @@ export async function PostSigleUpdate(getUrl, saveUrl, id, content, obj) {
         await Post(saveUrl, Data);
     }
 
-    return { Success: false, Msg: "用户取消操作" };
+    return { Success: false, Msg: "User cancels the operation" };
 }

@@ -179,7 +179,7 @@ export default {
                         this.$refs.ValidCode.refreshCode();
                     }
                 } else {
-                    this.$message.error("验证不通过")
+                    this.$message.error("Verification failed")
                     this.$refs.ValidCode.refreshCode();
                     return false;
                 }

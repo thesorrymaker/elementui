@@ -70,7 +70,7 @@ service.interceptors.response.use(
     //如果网络错误就是后端没有启动
     if (error.message.indexOf("Network Error") != -1) {
       Message({
-        message: '后端服务没有启动',
+        message: 'The backend service is not started',
         type: 'error',
         duration: 5 * 1000
       })
