@@ -40,7 +40,7 @@
             </template>
             <template v-slot:Operate="scope">
                 <el-button type="primary" size="mini"  @click="ShowEditModal(scope.row.Id)">modify</el-button>
-                <el-button type="danger" size="mini"  @click="ShowDeleteModal(scope.row.Id)" v-if="scope.row.RoleTypeFormat == 'user' && RoleType == 'admin'">删 除</el-button>
+                <el-button type="danger" size="mini"  @click="ShowDeleteModal(scope.row.Id)" v-if="scope.row.RoleTypeFormat == 'user' && RoleType == 'admin'">delete</el-button>
                 
             </template>
         </PaginationTable>

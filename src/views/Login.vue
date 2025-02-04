@@ -55,7 +55,7 @@
 
                     <div class="form-footer">
                         <RouterLink :to="{ path: '/ForgetPassword' }" class="forget-pwd">
-                          forget the password?
+                          Register an account?
                         </RouterLink>
                     </div>
                 </div>
@@ -125,7 +125,7 @@ export default {
 
                     let res = await store.dispatch("Login", this.formData);
                     if (res.Success) {
-                        this.$message.success("登录成功!");
+                        this.$message.success("Login successful!");
                         this.$router.push({
                             path: "/Admin"
                         })

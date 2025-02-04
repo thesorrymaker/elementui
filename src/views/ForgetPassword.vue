@@ -17,7 +17,7 @@
         <div class="form-container">
           <h2 class="title">
             <span class="tech-line"></span>
-            Password Reset
+            Register an account
             <span class="tech-line"></span>
           </h2>
           
@@ -65,7 +65,7 @@
             </el-form-item>
 
             <el-button type="primary" class="submit-btn" @click="RegisterBtn">
-              Reset Password
+              Register
               <i class="el-icon-right"></i>
             </el-button>
           </el-form>

@@ -12,17 +12,41 @@
                             :clearable="true"></el-input>
                     </el-form-item>
                     <el-form-item label="eyeColor" prop="EyeColor">
-                        <el-input v-model.trim="searchForm.EyeColor" placeholder="Please enter a eyeColor"
-                            :clearable="true"></el-input>
+                      <el-select v-model="searchForm.EyeColor" placeholder="Please select">
+                        <el-option key="RED" label="RED" value="RED">
+                        </el-option>
+                        <el-option key="BLACK" label="BLACK" value="BLACK">
+                        </el-option>
+                        <el-option key="YELLOW" label="YELLOW" value="YELLOW">
+                        </el-option>
+                        <el-option key="BROWN" label="BROWN" value="BROWN">
+                        </el-option>
+                      </el-select>
                     </el-form-item>
                     <el-form-item label="hairColor" prop="HairColor">
-                        <el-input v-model.trim="searchForm.HairColor" placeholder="Please enter a contact number" :clearable="true"></el-input>
+                      <el-select v-model="searchForm.HairColor" placeholder="Please select">
+                        <el-option key="RED" label="RED" value="RED">
+                        </el-option>
+                        <el-option key="BLACK" label="BLACK" value="BLACK">
+                        </el-option>
+                        <el-option key="YELLOW" label="YELLOW" value="YELLOW">
+                        </el-option>
+                        <el-option key="BROWN" label="BROWN" value="BROWN">
+                        </el-option>
+                      </el-select>
                     </el-form-item>
                     <el-form-item label="height" prop="Height">
-                        <el-input v-model.trim="searchForm.Height" placeholder="Please enter your Height address" :clearable="true"></el-input>
+                      <el-input v-model.trim="searchForm.Height" placeholder="Please enter your height" :clearable="true"></el-input>
                     </el-form-item>
                     <el-form-item label="nationality" prop="Nationality">
-                        <el-input v-model.trim="searchForm.Nationality" placeholder="Please enter your Nationality" :clearable="true"></el-input>
+                      <el-select v-model="searchForm.Nationality" placeholder="Please select">
+                        <el-option key="UNITED_KINGDOM" label="UNITED_KINGDOM" value="UNITED_KINGDOM">
+                        </el-option>
+                        <el-option key="CHINA" label="CHINA" value="CHINA">
+                        </el-option>
+                        <el-option key="SOUTH_KOREA" label="SOUTH_KOREA" value="SOUTH_KOREA">
+                        </el-option>
+                      </el-select>
                     </el-form-item>
 
                 </el-form>
@@ -54,14 +78,30 @@
 
                   <el-col :span="24">
                         <el-form-item label="eyeColor" prop="EyeColor">
-                            <el-input type="text" v-model.trim="formData.EyeColor" placeholder="Please enter a contact person"
-                                :clearable="true"></el-input>
+                          <el-select v-model="formData.EyeColor" placeholder="Please select">
+                            <el-option key="RED" label="RED" value="RED">
+                            </el-option>
+                            <el-option key="BLACK" label="BLACK" value="BLACK">
+                            </el-option>
+                            <el-option key="YELLOW" label="YELLOW" value="YELLOW">
+                            </el-option>
+                            <el-option key="BROWN" label="BROWN" value="BROWN">
+                            </el-option>
+                          </el-select>
                         </el-form-item>
                     </el-col>
                     <el-col :span="24">
                         <el-form-item label="hairColor" prop="HairColor">
-                            <el-input type="text" v-model.trim="formData.HairColor" placeholder="Please enter a contact number"
-                                :clearable="true"></el-input>
+                          <el-select v-model="formData.HairColor" placeholder="Please select">
+                            <el-option key="RED" label="RED" value="RED">
+                            </el-option>
+                            <el-option key="BLACK" label="BLACK" value="BLACK">
+                            </el-option>
+                            <el-option key="YELLOW" label="YELLOW" value="YELLOW">
+                            </el-option>
+                            <el-option key="BROWN" label="BROWN" value="BROWN">
+                            </el-option>
+                          </el-select>
                         </el-form-item>
                     </el-col>
                     <el-col :span="24">
@@ -71,10 +111,16 @@
                         </el-form-item>
                     </el-col>
                     <el-col :span="24">
-                        <el-form-item label="nationality" prop="Nationality">
-                            <el-input type="text" v-model.trim="formData.Nationality" placeholder="Please enter your Nationality"
-                                :clearable="true"></el-input>
-                        </el-form-item>
+                      <el-form-item label="nationality" prop="Nationality">
+                      <el-select v-model="formData.Nationality" placeholder="Please select">
+                        <el-option key="UNITED_KINGDOM" label="UNITED_KINGDOM" value="UNITED_KINGDOM">
+                        </el-option>
+                        <el-option key="CHINA" label="CHINA" value="CHINA">
+                        </el-option>
+                        <el-option key="SOUTH_KOREA" label="SOUTH_KOREA" value="SOUTH_KOREA">
+                        </el-option>
+                      </el-select>
+                      </el-form-item>
                     </el-col>
                 </el-row>
 
