@@ -173,6 +173,14 @@
 </template>
 
 <script>
+
+import Vue from "vue";
+import ElementUI from "element-ui";
+import locale from "element-ui/lib/locale/lang/en"; // 引入英语语言包
+
+// 配置 Element 使用英语
+Vue.use(ElementUI, { locale });
+
 import { ReplaceImageHttp } from "@/utils/comm";
 import store from "@/store";
 import VideoButton from "./VideoButton.vue"
@@ -205,22 +213,22 @@ export default {
 
     },
 
-    data() {
-        return {
-            selectRow: [],
-            datalist: [],
-            listLoading: true,
-            columnList: [],
-            where_: {},//默认的条件
-            searchWhere: {},//搜索带过来的条件
-            pagination: {
-                limit: 10,
-                page: 1,
-                total: 0,
-                pageSizes: [10, 20, 50, 100, 200, 500, 1000],
-            },
-        };
-    },
+  data() {
+    return {
+      selectRow: [],
+      datalist: [],
+      listLoading: true,
+      columnList: [],
+      where_: {},//默认的条件
+      searchWhere: {},//搜索带过来的条件
+      pagination: {
+        limit: 10,
+        page: 1,
+        total: 0,
+        pageSizes: [10, 20, 50, 100, 200, 500, 1000],
+      },
+    };
+  },
 
     created() {
         this.where_ = this.$props.where;

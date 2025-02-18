@@ -1,5 +1,6 @@
 import Cookies from "js-cookie";
 
+
 const TokenKey = "vue_admin";
 
 export function getToken() {

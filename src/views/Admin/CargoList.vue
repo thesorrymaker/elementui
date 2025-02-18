@@ -5,7 +5,7 @@
 
             <div slot="header" class="clearfix">
                 <el-button type="primary" size="mini" icon="el-icon-search" @click="SearchClick">search</el-button>
-                <el-button type="warning" size="mini" @click="ResetClick" icon="el-icon-s-promotion">重 置</el-button>
+                <el-button type="warning" size="mini" @click="ResetClick" icon="el-icon-s-promotion">reset</el-button>
             </div>
             <div class="tb-body">
                 <el-form ref="searchFormRef" :model="searchForm" :inline="true" label-width="120px" :style="`flex:1;`">
@@ -114,16 +114,27 @@
                 <el-button class="margin-top-xs" type="danger" size="mini" @click="ShowDeleteModal(scope.row.Id)">deletion</el-button>
             </template>
         </PaginationTable>
+
+
+
     </div>
+
+
+
+
+
 </template>
 
 <script>
 import store from '@/store';
 import {mapGetters} from 'vuex';
+import DownloadLink from "@/components/DownLoad/DownloadLink.vue";
+import UploadExcelImport from "@/components/Upload/UploadExcelImport.vue";
 
 
 export default {
   name: "CargoList",
+  components: {UploadExcelImport, DownloadLink},
   computed: {
     ...mapGetters([
       'Token', 'UserInfo', 'RoleType', 'HasUserInfo', 'ColumnType', "UserId", "CurrentWarehouseId"

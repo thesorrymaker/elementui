@@ -14,8 +14,8 @@ export function ConfirmMessageBox(config) {
     };
     return new Promise(function (resolve, reject) {
         MessageBox.confirm(_config.content, _config.title, {
-            confirmButtonText: "确定",
-            cancelButtonText: "取消",
+            confirmButtonText: "Sure",
+            cancelButtonText: "Cancel",
             type: "warning",
         })
             .then(() => {
@@ -212,7 +212,7 @@ export function CheckIsLogin() {
         Message(
             {
                 showClose: true,
-                message: '请先登录后,再操作',
+                message: 'Please log in first before operating',
                 type: 'error'
             }
         )

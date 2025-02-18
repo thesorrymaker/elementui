@@ -105,7 +105,7 @@ export default {
 
             } else {
                 // 提示信息，需引入Message
-                this.$message.error('图片插入失败');
+                this.$message.error('Image insertion failed');
             }
         },
         onEditorBlur() { }, // 失去焦点触发事件

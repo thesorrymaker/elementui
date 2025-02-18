@@ -1,5 +1,5 @@
 <template>
-    <el-button size="mini" type="success" icon="el-icon-download" @click="ExportClick()">导 出</el-button>
+    <el-button size="mini" type="success" icon="el-icon-download" @click="ExportClick()">output</el-button>
 </template>
 <script>
 export default {

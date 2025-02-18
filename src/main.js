@@ -107,6 +107,9 @@ import ExportButton from "@/components/Buttons/ExportButton.vue"
 //导出按钮组件
 Vue.component("ExportButton", ExportButton)
 
+import ImportButton from "@/components/Buttons/ImportButton.vue"
+Vue.component("ImportButton", ImportButton)
+
 import RadioSelect from "@/components/Select/RadioSelect.vue"
 //通用按钮单选框
 Vue.component("RadioSelect", RadioSelect)

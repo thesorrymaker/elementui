@@ -8,16 +8,27 @@
                 <slot name="content" :data="options"></slot>
             </div>
         </div>
-        <div class="custom-pagination">
-            <el-pagination background @size-change="handleSizeChange" @current-change="handleCurrentChange"
-                :current-page="pagination.page" :page-size="pagination.limit" layout="total, prev, pager, next, jumper"
-                :total="pagination.total">
-            </el-pagination>
-        </div>
+
+      <div class="custom-pagination">
+        <el-pagination background @size-change="handleSizeChange" @current-change="handleCurrentChange"
+                       :current-page="pagination.page" :page-size="pagination.limit" layout="total, prev, pager, next, jumper"
+                       :total="pagination.total">
+        </el-pagination>
+      </div>
+
     </div>
 </template>
 
 <script>
+import Vue from "vue";
+import ElementUI from "element-ui";
+import locale from "element-ui/lib/locale/lang/en"; // 引入英语语言包
+
+// 配置 Element 使用英语
+Vue.use(ElementUI, { locale });
+
+
+
 
 export default {
 
@@ -42,21 +53,21 @@ export default {
     watch: {
 
     },
-    data() {
-        return {
-            loading: false, //是否正在获取数据中
-            options: [],
-            where_: {},
-            pagination: {
-                limit: 10,
-                page: 1,
-                total: 0,
-                pageSizes: [10, 20, 50, 100],
-            },
-            selectOption: {},
+  data() {
+    return {
+      loading: false, //是否正在获取数据中
+      options: [],
+      where_: {},
+      pagination: {
+        limit: 10,
+        page: 1,
+        total: 0,
+        pageSizes: [10, 20, 50, 100],
+      },
+      selectOption: {},
 
-        }
-    },
+    }
+  },
     created() {
         this.pagination.limit = this.$props.limit;
         this.where_ = this.$props.where;
