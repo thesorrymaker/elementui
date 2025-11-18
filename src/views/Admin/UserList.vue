@@ -34,8 +34,8 @@
 
     <PaginationTable ref="PaginationTableId" url="/User/List" :column="dataColum">
       <template v-slot:header>
-        <el-button type="primary" size="mini" icon="el-icon-edit" @click="ShowEditModal()">add</el-button>
-        <ExportButton exportUrl="/User/Export" :where="searchForm"></ExportButton>
+
+
 
         <el-upload
             class="upload-demo"
@@ -50,23 +50,10 @@
         :limit="1"
         accept=".xls,.xlsx"
         >
-        <el-button size="mini" type="primary" >
-          <el-icon><Upload /></el-icon>
-          Excel
-        </el-button>
+
         </el-upload>
 
-        <el-table :data="importHistory" border style="margin-top: 20px;">
-          <el-table-column prop="Id" label="ID" width="80"></el-table-column>
-          <el-table-column prop="Upload_time" label="上传时间"></el-table-column>
-          <el-table-column prop="Status" label="状态">
-            <template #default="{ row }">
-              <el-tag :type="row.Status === '成功' ? 'success' : 'danger'">
-                {{ row.Status }}
-              </el-tag>
-            </template>
-          </el-table-column>
-        </el-table>
+
 
       </template>
 
@@ -156,7 +143,7 @@
 <script>
 import store from '@/store';
 import {mapGetters} from 'vuex'
-import axios from "axios";
+
 
 export default {
   name: "UserList",
@@ -167,7 +154,7 @@ export default {
   },
   data() {
     return {
-      importHistory: [],
+
       searchForm: {},
       editorShow: false,
       dataColum: [
@@ -296,21 +283,21 @@ export default {
       this.editorShow = true;
 
     },
-    async getImportHistory() {
-      try {
-        const res = await axios.get("http://localhost:7245/User/importHistory");
-        console.log("从后端获取的数据:", res.data);
-
-        if (res.data && res.data.Success && res.data.Data) {
-          this.importHistory = res.data.Data; // 确保赋值的是正确的数组
-        } else {
-          this.importHistory = []; // 防止赋值错误
-        }
-      } catch (error) {
-        console.error("获取导入历史失败:", error);
-        this.importHistory = [];
-      }
-    },
+    // async getImportHistory() {
+    //   try {
+    //     const res = await axios.get("http://localhost:7245/User/importHistory");
+    //     console.log("从后端获取的数据:", res.data);
+    //
+    //     if (res.data && res.data.Success && res.data.Data) {
+    //       this.importHistory = res.data.Data; // 确保赋值的是正确的数组
+    //     } else {
+    //       this.importHistory = []; // 防止赋值错误
+    //     }
+    //   } catch (error) {
+    //     console.error("获取导入历史失败:", error);
+    //     this.importHistory = [];
+    //   }
+    // },
 
 
 
@@ -349,9 +336,7 @@ export default {
       this.$refs.PaginationTableId.Reload(this.searchForm);
     },
   },
-  mounted() {
-    this.getImportHistory(); // 页面加载时获取历史记录
-  },
+
 }
 
 </script>
